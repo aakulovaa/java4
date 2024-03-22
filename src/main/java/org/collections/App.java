@@ -22,7 +22,7 @@ public class App
                     .withCSVParser(parser)
                     .build();
 
-            List<String> data = List.of(csvReader.readNext());
+            //List<String> data = List.of(csvReader.readNext());
             List<String> data2 = List.of(csvReader.readNext());
             System.out.println(data2);
 
