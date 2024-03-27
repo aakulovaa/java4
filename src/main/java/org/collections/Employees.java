@@ -3,7 +3,6 @@ package org.collections;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
 
-import java.text.ParseException;
 
 public class Employees {
     @CsvBindByName(column = "id", required = true)
@@ -23,21 +22,23 @@ public class Employees {
 
     /**
      * Конструктор для заполнения элементов класса
+     *
      * @param line - строка из считываемого файла
      */
-    public Employees(String[] line) throws ParseException {
+    public Employees(String[] line) {
 
-        idEmployee=Integer.valueOf(line[0]);
-        nameEmployee=line[1];
+        idEmployee = Integer.valueOf(line[0]);
+        nameEmployee = line[1];
         genderEmployee = line[2];
-        birthDateEmployee= line[3];
-        divisionEmployee= new Division(line[4].charAt(0));
-        salaryEmployee=Integer.valueOf(line[5]);
+        birthDateEmployee = line[3];
+        divisionEmployee = new Division(line[4].charAt(0));
+        salaryEmployee = Integer.valueOf(line[5]);
 
     }
 
     /**
      * Метод получения значения поля idEmployee
+     *
      * @return - возвращает значение поля idEmployee
      */
     public Integer getIdEmployee() {
@@ -46,6 +47,7 @@ public class Employees {
 
     /**
      * Метод записи значения в поле
+     *
      * @param idEmployee - то, куда записывается значение
      */
     public void setIdEmployee(Integer idEmployee) {
@@ -54,6 +56,7 @@ public class Employees {
 
     /**
      * Метод получения значения поля nameEmployee
+     *
      * @return - возвращает значение поля nameEmployee
      */
     public String getNameEmployee() {
@@ -62,6 +65,7 @@ public class Employees {
 
     /**
      * Метод записи значения в поле
+     *
      * @param nameEmployee - то, куда записывается значение
      */
     public void setNameEmployee(String nameEmployee) {
@@ -70,6 +74,7 @@ public class Employees {
 
     /**
      * Метод получения значения поля genderEmployee
+     *
      * @return - возвращает значение поля genderEmployee
      */
     public String getGenderEmployee() {
@@ -78,6 +83,7 @@ public class Employees {
 
     /**
      * Метод записи значения в поле
+     *
      * @param genderEmployee - то, куда записывается значение
      */
     public void setGenderEmployee(String genderEmployee) {
@@ -86,6 +92,7 @@ public class Employees {
 
     /**
      * Метод получения значения поля birtDateEmployee
+     *
      * @return - возвращает значение поля birtDateEmployee
      */
     public String getBirtDateEmployee() {
@@ -94,6 +101,7 @@ public class Employees {
 
     /**
      * Метод записи значения в поле
+     *
      * @param birthDateEmployee - то, куда записывается значение
      */
     public void setBirthDateEmployee(String birthDateEmployee) {
@@ -102,17 +110,20 @@ public class Employees {
 
     /**
      * Метод получения значения поля divisionEmployee
+     *
      * @return - возвращает значение поля divisionEmployee
      */
     public char getDivisionNameEmployee() {
         return divisionEmployee.getNameDivision();
     }
+
     public Integer getDivisionIdEmployee() {
         return divisionEmployee.getIdDivision();
     }
 
     /**
      * Метод записи значения в поле
+     *
      * @param divisionEmployee - то, куда записывается значение
      */
     public void setDivisionEmployee(Division divisionEmployee) {
@@ -121,6 +132,7 @@ public class Employees {
 
     /**
      * Метод получения значения поля salaryEmployee
+     *
      * @return - возвращает значение поля salaryEmployee
      */
     public Integer getSalaryEmployee() {
@@ -129,6 +141,7 @@ public class Employees {
 
     /**
      * Метод записи значения в поле
+     *
      * @param salaryEmployee - то, куда записывается значение
      */
     public void setSalaryEmployee(Integer salaryEmployee) {
