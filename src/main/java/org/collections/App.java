@@ -22,16 +22,17 @@ public class App {
                     .build();
 
 
-            List<String> data = List.of(csvReader.readNext());
+            csvReader.readNext();
             List<String[]> allData = csvReader.readAll();
 
-            List<Employees> list = new ArrayList<Employees>();
+            List<Employees> list = new ArrayList<>();
 
             for (String[] row : allData) {
                 Employees object = new Employees(row);
                 list.add(object);
             }
             for (Employees row : list) {
+
                 System.out.print(STR."\{row.getIdEmployee()}\t\{row.getNameEmployee()}\t\{row.getGenderEmployee()}\t\{row.getBirtDateEmployee()}\t\{row.getDivisionIdEmployee()}\t\{row.getDivisionNameEmployee()}\t\{row.getSalaryEmployee()}\n");
             }
         } catch (Exception e) {
