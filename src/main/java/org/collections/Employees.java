@@ -14,11 +14,27 @@ public class Employees {
     private String genderEmployee;
     @CsvBindByName(column = "BirtDate", required = true)
     @CsvDate("dd.MM.yyyy")
-    private Date birtDateEmployee;
+    private String birtDateEmployee;
+
     @CsvBindByName(column = "Division", required = true)
-    private Division divisionEmployee;
+    private String divisionEmployee;
     @CsvBindByName(column = "Salary", required = true)
     private Integer salaryEmployee;
+
+    /**
+     * Конструктор для заполнения элементов класса
+     * @param line - строка из считываемого файла
+     */
+    public Employees(String[] line) {
+
+        idEmployee=Integer.valueOf(line[0]);
+        nameEmployee=line[1];
+        genderEmployee = line[2];
+        birtDateEmployee= line[3];
+        divisionEmployee= line[4];
+        salaryEmployee=Integer.valueOf(line[5]);
+
+    }
 
     /**
      * Метод получения значения поля idEmployee
@@ -72,7 +88,7 @@ public class Employees {
      * Метод получения значения поля birtDateEmployee
      * @return - возвращает значение поля birtDateEmployee
      */
-    public Date getBirtDateEmployee() {
+    public String getBirtDateEmployee() {
         return birtDateEmployee;
     }
 
@@ -80,7 +96,7 @@ public class Employees {
      * Метод записи значения в поле
      * @param birtDateEmployee - то, куда записывается значение
      */
-    public void setBirtDateEmployee(Date birtDateEmployee) {
+    public void setBirtDateEmployee(String birtDateEmployee) {
         this.birtDateEmployee = birtDateEmployee;
     }
 
@@ -88,7 +104,7 @@ public class Employees {
      * Метод получения значения поля divisionEmployee
      * @return - возвращает значение поля divisionEmployee
      */
-    public Division getDivisionEmployee() {
+    public String getDivisionEmployee() {
         return divisionEmployee;
     }
 
@@ -96,7 +112,7 @@ public class Employees {
      * Метод записи значения в поле
      * @param divisionEmployee - то, куда записывается значение
      */
-    public void setDivisionEmployee(Division divisionEmployee) {
+    public void setDivisionEmployee(String divisionEmployee) {
         this.divisionEmployee = divisionEmployee;
     }
 
