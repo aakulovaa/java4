@@ -25,7 +25,7 @@ public class Employees {
      * Конструктор для заполнения элементов класса
      * @param line - строка из считываемого файла
      */
-    public Employees(String[] line) throws ParseException {
+    public Employees(String[] line) {
 
         idEmployee=Integer.valueOf(line[0]);
         nameEmployee=line[1];
