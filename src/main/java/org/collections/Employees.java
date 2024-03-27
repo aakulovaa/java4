@@ -3,7 +3,6 @@ package org.collections;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
 
-import java.text.ParseException;
 
 public class Employees {
     @CsvBindByName(column = "id", required = true)
