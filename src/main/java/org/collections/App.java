@@ -1,50 +1,15 @@
 package org.collections;
 
-import com.opencsv.CSVParser;
-import com.opencsv.CSVParserBuilder;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
-
+/**
+ * <a href="https://github.com/aakulovaa/java3.git">...</a>
+ */
 public class App {
-    public static void readDataFromCustomSeparator(String file) {
-        try {
-            FileReader filereader = new FileReader(file);
-
-            CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
-
-            CSVReader csvReader = new CSVReaderBuilder(filereader)
-                    .withCSVParser(parser)
-                    .build();
-
-
-            csvReader.readNext();
-            List<String[]> allData = csvReader.readAll();
-
-            List<Employees> list = new ArrayList<>();
-
-            for (String[] row : allData) {
-                Employees object = new Employees(row);
-                list.add(object);
-            }
-            for (Employees row : list) {
-
-                System.out.print(STR."\{row.getIdEmployee()}\t\{row.getNameEmployee()}\t\{row.getGenderEmployee()}\t\{row.getBirtDateEmployee()}\t\{row.getDivisionIdEmployee()}\t\{row.getDivisionNameEmployee()}\t\{row.getSalaryEmployee()}\n");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
     public static void main(String[] args) throws IOException {
         System.out.println("Введите полный путь к файлу:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String path = reader.readLine();
-        readDataFromCustomSeparator(path);
+        ReadFile.readDataFromCustomSeparator(path);
     }
 }

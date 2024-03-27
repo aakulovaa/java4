@@ -4,6 +4,10 @@ import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
 
 
+/** Класс Человек со свойствами <b>idEmployee</b>, <b>nameEmployee</b>, <b>genderEmployee</b>,
+ * <b>birthDateEmployee</b>, <b>divisionEmployee</b>, <b>salaryEmployee</b>.
+ * @author Анна Акулова
+ */
 public class Employees {
     @CsvBindByName(column = "id", required = true)
     private Integer idEmployee;
@@ -11,7 +15,7 @@ public class Employees {
     private String nameEmployee;
     @CsvBindByName(column = "gender", required = true)
     private String genderEmployee;
-    @CsvBindByName(column = "BirtDate", required = true)
+    @CsvBindByName(column = "BirthDate", required = true)
     @CsvDate("dd.MM.yyyy")
     private String birthDateEmployee;
 

@@ -1,12 +1,14 @@
 package org.collections;
 
+/** Класс Подразделение со свойствами <b>idDivision</b>, <b>nameDivision</b>.
+ * @author Анна Акулова
+ */
 public class Division {
     private Integer idDivision;
     private char nameDivision;
 
     /**
      * Конструктор для присвоения значения полям и генерации id
-     *
      * @param symbol - название подразделения из файла
      */
     public Division(char symbol) {
