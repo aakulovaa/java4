@@ -3,7 +3,7 @@ package org.collections;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
 
-import java.util.Date;
+import java.text.ParseException;
 
 public class Employees {
     @CsvBindByName(column = "id", required = true)
@@ -14,7 +14,7 @@ public class Employees {
     private String genderEmployee;
     @CsvBindByName(column = "BirtDate", required = true)
     @CsvDate("dd.MM.yyyy")
-    private String birtDateEmployee;
+    private String birthDateEmployee;
 
     @CsvBindByName(column = "Division", required = true)
     private Division divisionEmployee;
@@ -25,12 +25,12 @@ public class Employees {
      * Конструктор для заполнения элементов класса
      * @param line - строка из считываемого файла
      */
-    public Employees(String[] line) {
+    public Employees(String[] line) throws ParseException {
 
         idEmployee=Integer.valueOf(line[0]);
         nameEmployee=line[1];
         genderEmployee = line[2];
-        birtDateEmployee= line[3];
+        birthDateEmployee= line[3];
         divisionEmployee= new Division(line[4].charAt(0));
         salaryEmployee=Integer.valueOf(line[5]);
 
@@ -89,15 +89,15 @@ public class Employees {
      * @return - возвращает значение поля birtDateEmployee
      */
     public String getBirtDateEmployee() {
-        return birtDateEmployee;
+        return birthDateEmployee;
     }
 
     /**
      * Метод записи значения в поле
-     * @param birtDateEmployee - то, куда записывается значение
+     * @param birthDateEmployee - то, куда записывается значение
      */
-    public void setBirtDateEmployee(String birtDateEmployee) {
-        this.birtDateEmployee = birtDateEmployee;
+    public void setBirthDateEmployee(String birthDateEmployee) {
+        this.birthDateEmployee = birthDateEmployee;
     }
 
     /**

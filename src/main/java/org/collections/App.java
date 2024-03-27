@@ -5,17 +5,13 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
-
-public class App
-{
-    public static void readDataFromCustomSeparator(String file){
+public class App {
+    public static void readDataFromCustomSeparator(String file) {
         try {
             FileReader filereader = new FileReader(file);
 
@@ -36,17 +32,18 @@ public class App
                 list.add(object);
             }
             for (Employees row : list) {
-                    System.out.print(STR."\{row.getIdEmployee()}\t\{row.getNameEmployee()}\t\{row.getGenderEmployee()}\t\{row.getBirtDateEmployee()}\t\{row.getDivisionIdEmployee()}\t\{row.getDivisionNameEmployee()}\t\{row.getSalaryEmployee()}\n");
+                System.out.print(STR."\{row.getIdEmployee()}\t\{row.getNameEmployee()}\t\{row.getGenderEmployee()}\t\{row.getBirtDateEmployee()}\t\{row.getDivisionIdEmployee()}\t\{row.getDivisionNameEmployee()}\t\{row.getSalaryEmployee()}\n");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    public static void main( String[] args )
-    {
-        readDataFromCustomSeparator("/Users/annakulova/IdeaProjects/collections/src/main/resources/foreign_names.csv");
+    public static void main(String[] args) throws IOException {
+        System.out.println("Введите полный путь к файлу:");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String path = reader.readLine();
+        readDataFromCustomSeparator(path);
     }
 }
