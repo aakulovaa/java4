@@ -6,14 +6,17 @@ public class Division {
 
     /**
      * Конструктор для присвоения значения полям и генерации id
+     *
      * @param symbol - название подразделения из файла
      */
     public Division(char symbol) {
         idDivision = Integer.valueOf(symbol) - 64;
         nameDivision = symbol;
     }
+
     /**
      * Метод получения значения поля idDivision
+     *
      * @return - возвращает значение поля idDivision
      */
     public Integer getIdDivision() {
@@ -22,6 +25,7 @@ public class Division {
 
     /**
      * Метод записи значения в поле
+     *
      * @param idDivision - то, куда записывается значение
      */
     public void setIdDivision(Integer idDivision) {
@@ -30,6 +34,7 @@ public class Division {
 
     /**
      * Метод получения значения поля nameDivision
+     *
      * @return - возвращает значение поля nameDivision
      */
     public char getNameDivision() {
@@ -38,6 +43,7 @@ public class Division {
 
     /**
      * Метод записи значения в поле
+     *
      * @param nameDivision - то, куда записывается значение
      */
     public void setNameDivision(char nameDivision) {
