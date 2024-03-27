@@ -17,7 +17,7 @@ public class Employees {
     private String birtDateEmployee;
 
     @CsvBindByName(column = "Division", required = true)
-    private String divisionEmployee;
+    private Division divisionEmployee;
     @CsvBindByName(column = "Salary", required = true)
     private Integer salaryEmployee;
 
@@ -31,7 +31,7 @@ public class Employees {
         nameEmployee=line[1];
         genderEmployee = line[2];
         birtDateEmployee= line[3];
-        divisionEmployee= line[4];
+        divisionEmployee= new Division(line[4].charAt(0));
         salaryEmployee=Integer.valueOf(line[5]);
 
     }
@@ -104,15 +104,18 @@ public class Employees {
      * Метод получения значения поля divisionEmployee
      * @return - возвращает значение поля divisionEmployee
      */
-    public String getDivisionEmployee() {
-        return divisionEmployee;
+    public char getDivisionNameEmployee() {
+        return divisionEmployee.getNameDivision();
+    }
+    public Integer getDivisionIdEmployee() {
+        return divisionEmployee.getIdDivision();
     }
 
     /**
      * Метод записи значения в поле
      * @param divisionEmployee - то, куда записывается значение
      */
-    public void setDivisionEmployee(String divisionEmployee) {
+    public void setDivisionEmployee(Division divisionEmployee) {
         this.divisionEmployee = divisionEmployee;
     }
 

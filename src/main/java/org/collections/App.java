@@ -36,7 +36,7 @@ public class App
                 list.add(object);
             }
             for (Employees row : list) {
-                    System.out.print(STR."\{row.getIdEmployee()}\t\{row.getNameEmployee()}\t\{row.getGenderEmployee()}\t\{row.getBirtDateEmployee()}\t\{row.getDivisionEmployee()}\t\{row.getSalaryEmployee()}\n");
+                    System.out.print(STR."\{row.getIdEmployee()}\t\{row.getNameEmployee()}\t\{row.getGenderEmployee()}\t\{row.getBirtDateEmployee()}\t\{row.getDivisionIdEmployee()}\t\{row.getDivisionNameEmployee()}\t\{row.getSalaryEmployee()}\n");
             }
         }
         catch (Exception e) {
